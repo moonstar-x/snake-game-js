@@ -22,7 +22,6 @@ function draw() {
   // if the snake is dead, stop updating the snake's position and display death message.
   if (snake.isDead) {
     console.log("You are dead, not a big surprise.");
-
     textSize(36);
     text("Game Over", width/2, height/2);
     textSize(18);
@@ -31,12 +30,11 @@ function draw() {
   // if the snake is not dead, update the snake's position
   else {
     snake.update();
+    // display snake and food objects
+    snake.display();
+    food.display();
   }
-
-  // display snake and food objects
-  snake.display();
-  food.display();
-
+  
   // if the snake's position overlaps with the food's, eat it.
   if (snake.x === food.x && snake.y === food.y) {
     food.update();

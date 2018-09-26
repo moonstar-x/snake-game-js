@@ -58,8 +58,8 @@ function Snake() {
     }
     // the snake hits a part of its tail.
     else {
-      for (var i = 0; i < this.level; i++) {
-        if (this.tail[i-1].x === this.x && this.tail[i-1].y === this.y) {
+      for (var i = 0; i < this.level-1; i++) {
+        if (this.tail[i].x === this.x && this.tail[i].y === this.y) {
           this.isDead = true;
         }
       }
